@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'ashry-new-ec2' }
 
     stages {
         stage('Checkout') {
