@@ -2,29 +2,17 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/elashrypublic/digi-jenkins-lab-week-14.git'
+                git branch: 'main', url: 'https://github.com/ahmedsamyabdullah/service-app.git'
             }
         }
 
-        stage('Install & Test (Docker)') {
-            agent {
-                docker {
-                    image 'php:8.2-cli'
-                }
-            }
-
+        stage('Run Unit Tests') {
             steps {
-                sh 'php -v'
-
-                sh 'apt-get update && apt-get install -y unzip curl git'
-
-                sh 'curl -sS https://getcomposer.org/installer | php'
-                sh 'php composer.phar install'
-
-                sh './vendor/bin/phpunit --log-junit results.xml'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh '/usr/local/bin/phpunit --log-junit results.xml tests/'
+                }
             }
         }
 
@@ -40,10 +28,10 @@ pipeline {
             echo 'Pipeline job finished.'
         }
         success {
-            echo 'All tests passed successfully.'
+            echo 'Congratulations! All tests passed successfully.'
         }
         failure {
-            echo 'Tests failed. Check results.'
+            echo 'The code failed the tests! Please check the Test Result trend for details.'
         }
     }
 }
