@@ -45,9 +45,15 @@ The code is in a public GitHub repository. You will configure Jenkins to:
    - install github integration plugin on jenkins
    - from your repo -> settings -> webhook -> Add webhook
    - **Note**: for Payload URL use ngrok
-10. Ngrok -> login with github accound -> download on windows (host) and get auth
-11. open powershell on windows 
-    - $ ngrok http http://192.168.x.x:8080    # ip of your ubuntu vm
+10. Install zrok2 on Ubuntu VM
+    $ curl -sSf https://get.openziti.io/install.bash | sudo bash -s zrok2
+11. Enable zrok account
+    - $ zrok2 enable YOUR_TOKEN   # TOKEN WILL SHOW AFTER SIGN UP
+    - Expose Jenkins publicly
+      $ zrok2 share public http://localhost:8080
+    - Note: Payload URL must use zrok public URL
+      Example
+      https://xxxxx.share.zrok.io/github-webhook/
     - must payload URL on github end by /github-webhook/
     - check Recent Deliveries tab in github webhook is success ping
 12. Write the Jenkinsfile
