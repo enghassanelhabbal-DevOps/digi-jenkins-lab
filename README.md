@@ -28,7 +28,7 @@ The code is in a public GitHub repository. You will configure Jenkins to:
 --- 
 
 #                                          **Instructions**
-1. clone this repo $ git clone https://github.com/ahmedsamyabdullah/digi-jenkins-lab.git
+1. clone this repo $ git clone https://github.com/enghassanelhabbal-DevOps/digi-jenkins-lab.git
 2. $ docker exec -u root -it jenkins bash
 3. $ apt update
 4. $ apt install -y php-cli php-mbstring php-xml php-curl unzip
