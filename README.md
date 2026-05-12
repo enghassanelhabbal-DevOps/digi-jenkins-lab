@@ -51,4 +51,6 @@ The code is in a public GitHub repository. You will configure Jenkins to:
     - must payload URL on github end by /github-webhook/
     - check Recent Deliveries tab in github webhook is success ping
 12. Write the Jenkinsfile
-    - 
+    - <img width="1272" height="1439" alt="Screenshot 2026-05-12 175040" src="https://github.com/user-attachments/assets/bb2e291d-d2a4-4fb8-a357-54631729ab94" />
+<img width="1274" height="1439" alt="Screenshot 2026-05-12 175032" src="https://github.com/user-attachments/assets/649a8741-369e-468e-b77f-ccf65f1ed7b9" />
+<img width="1274" height="1439" alt="Screenshot 2026-05-12 175013" src="https://github.com/user-attachments/assets/eb42063e-8329-4b8e-9af3-ac19fa9d98e6" />
