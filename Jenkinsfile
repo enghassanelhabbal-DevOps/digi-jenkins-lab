@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'bonus-node' }
+    agent any
 
     environment {
         GITHUB_TOKEN = credentials('github-token')
